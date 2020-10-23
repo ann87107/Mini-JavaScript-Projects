@@ -1,0 +1,138 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utility Components */
+:root {
+  font-size: 62.5%;
+
+  /* Color */
+  --color-bg: #242333;
+  --color-text: #fff;
+  --color-seat: #444451;
+  --color-seat-text: #777;
+  --color-seat-selected: #6feaf6;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Lato", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Movie Container */
+.movie-containter {
+  margin: 2rem 0;
+}
+
+.movie-containter select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  padding: 0.5rem 1.5rem;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+/* Showcase */
+.showcase {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--color-seat-text);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.showcase li small {
+  margin-left: 0.2rem;
+}
+
+/* Screen and Seats */
+.container {
+  perspective: 100rem;
+  margin-bottom: 3rem;
+}
+
+.screen {
+  background-color: #fff;
+  height: 7rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.row {
+  display: flex;
+}
+
+.seat {
+  background-color: var(--color-seat);
+  height: 1.2rem;
+  width: 1.5rem;
+  margin: 0.3rem;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+.seat.selected {
+  background-color: var(--color-seat-selected);
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 1.8rem;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 1.8rem;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+/* Text */
+p.text {
+  margin: 0.5rem 0;
+}
+
+p.text span:nth-of-type(1),
+p.text span:nth-of-type(3) {
+  color: var(--color-seat-selected);
+}
